@@ -29,22 +29,6 @@ public class CorpusInspector {
 		
 		System.out.println(files.size());
 		
-		List<File> result = new ArrayList<File>();
-		
-		long l = files.stream().filter(f -> f.canRead())
-				.filter(f -> f.getName().endsWith("du"))
-				.map(f -> readin(f))
-				.filter(s -> s.length() > 500)
-				.count();
-		
-		List<String> stringList = files.stream().filter(f -> f.canRead())
-				.filter(f -> f.getName().endsWith("du"))
-				.map(f -> readin(f))
-				.filter(s -> s.length() > 500)
-				.collect(Collectors.toList());
-
-		
-		System.out.println(l);
 
 	}
 }

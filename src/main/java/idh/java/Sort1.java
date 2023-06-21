@@ -2,6 +2,7 @@ package idh.java;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Sort1 {
 	
@@ -14,30 +15,15 @@ public class Sort1 {
 	}
 	
 	public static int findInsertPosition(List<Integer> lst, int element) {
-		for (int j = 0; j < lst.size(); j++) {
-			int cmp = compare(lst.get(j), element);
-			if (cmp > 0) {
-				return j;
-			}
-		}
-		return lst.size();
+		// TODO: Implement
+		return 0;
 	}
 	
 	public static List<Integer> sort(List<Integer> array) {
-		ArrayList<Integer> r = new ArrayList<Integer>(array.size());
-		for (int i = 0; i < array.size(); i++) {
-			int c = array.get(i);
-			
-			if (r.isEmpty())
-				r.add(c);
-			else {
-				int insertPosition = findInsertPosition(r, c);
-				r.add(insertPosition, c);
-			}
-		}
-		return r;
-		
+		// TODO: Implement
+		return null;
 	}
+	
 	
 	public static final void main(String[] args) {
 		List<Integer> arr = new ArrayList<Integer>();
@@ -55,6 +41,34 @@ public class Sort1 {
 		
 		System.out.println(arr);
 		System.out.println(sort(arr));
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void largeListExperiment(int n) {
+		long start;
+
+		Random random = new Random();
+		List<Integer> list = new ArrayList<Integer>();
+		
+		for (int i = 0; i < n; i++) {
+			list.add(random.nextInt());
+		}
+		
+		start = System.currentTimeMillis();
+		List<Integer> listSorted = sort(list);
+		System.out.printf("Sort1 a list with %d = %1.0e random elements: %dms.%n", n, (double)n, (System.currentTimeMillis()-start));
 
 	}
+
+
 }

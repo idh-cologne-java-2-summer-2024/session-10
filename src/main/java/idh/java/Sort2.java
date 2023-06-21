@@ -1,8 +1,8 @@
 package idh.java;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 public class Sort2 {
 	
@@ -82,5 +82,30 @@ public class Sort2 {
 		System.out.println(arr);
 		System.out.println(sort(arr));
 
+		largeListExperiment(10);
+		largeListExperiment(100);
+		largeListExperiment(1000);
+		largeListExperiment(10000);
+		largeListExperiment(100000);
+		largeListExperiment(1000000);
+		largeListExperiment(10000000);
+
 	}
+
+	public static void largeListExperiment(int n) {
+		long start;
+
+		Random random = new Random();
+		List<Integer> list = new ArrayList<Integer>();
+		
+		for (int i = 0; i < n; i++) {
+			list.add(random.nextInt());
+		}
+		
+		start = System.currentTimeMillis();
+		List<Integer> listSorted = sort(list);
+		System.out.printf("Sort2 a list with %d = %1.0e random elements: %dms.%n", n, (double)n, (System.currentTimeMillis()-start));
+
+	}
+
 }
