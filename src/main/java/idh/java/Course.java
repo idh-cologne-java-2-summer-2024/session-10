@@ -30,4 +30,8 @@ public class Course {
     public void setPoints(Student s, int p) {
 	this.points.put(s, p);
     }
+
+    public Set<Student> getMembers() {
+	return members;
+    }
 }

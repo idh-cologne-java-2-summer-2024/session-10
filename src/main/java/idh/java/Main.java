@@ -2,6 +2,7 @@ package idh.java;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
@@ -46,6 +47,18 @@ public class Main {
 	// - their name (e.g., only names starting with S or T)
 	// - their points
 	// - whether they take part in two courses
+	
+
+	Iterator<Student> iterator = allStudents.iterator();
+
+	while (iterator.hasNext()) {
+	    Student s = iterator.next();
+
+	    if (java2.getMembers().contains(s)) {
+		System.out.println(s);
+	    }
+
+	}
     }
 
 
