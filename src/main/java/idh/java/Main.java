@@ -41,7 +41,11 @@ public class Main {
 	}
 	System.out.println(allStudents);
 
-	//
+	// Task: Filter students based on
+	// - the course they take
+	// - their name (e.g., only names starting with S or T)
+	// - their points
+	// - whether they take part in two courses
     }
 
 
