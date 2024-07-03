@@ -1,5 +1,7 @@
 package idh.java;
 
+import static java.lang.System.out;
+
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -40,7 +42,7 @@ public class Main {
 		bit.setPoints(s, random.nextInt(100));
 	    }
 	}
-	System.out.println(allStudents);
+	// System.out.println(allStudents);
 
 	// Task: Filter students based on
 	// - the course they take
@@ -48,15 +50,14 @@ public class Main {
 	// - their points
 	// - whether they take part in two courses
 	
+	// Predicate<Student> test = t -> java2.getMembers().contains(t);
 
-	Iterator<Student> iterator = allStudents.iterator();
+	Iterator<Integer> iterator = allStudents.stream().filter(t -> java2.getMembers().contains(t)).map(t -> t.id)
+		.iterator();
 
 	while (iterator.hasNext()) {
-	    Student s = iterator.next();
 
-	    if (java2.getMembers().contains(s)) {
-		System.out.println(s);
-	    }
+	    out.println(iterator.next());
 
 	}
     }

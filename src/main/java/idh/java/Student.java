@@ -16,4 +16,11 @@ public class Student {
 	return this.name + " (Id: " + this.id + ")";
     }
 
+    public static void main(String[] args) {
+	System.out.println(Student.lastId);
+	System.out.println(Student.class);
+	
+	Class<?> cls = Student.class;
+
+    }
 }
